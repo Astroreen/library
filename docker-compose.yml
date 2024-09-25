@@ -1,0 +1,14 @@
+version: "3.1"
+
+services:
+  springboot:
+    build: .
+    container_name: springboot
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:h2:mem:database
+      - SPRING_DATASOURCE_USERNAME=sa
+      - SPRING_DATASOURCE_PASSWORD=password
+      - SPRING_DATASOURCE_HIKARI_AUTO-COMMIT=false
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    ports:
+      - "8080:8080"
